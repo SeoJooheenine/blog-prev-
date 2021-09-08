@@ -10,4 +10,10 @@ public interface PostDao {
 
 	List<Post> list(String id);
 
+	List<Post> utdList();
+
+	void viewcount(int pid);
+
+	Post item(int pid);
+
 }

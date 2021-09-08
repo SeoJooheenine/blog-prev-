@@ -10,4 +10,8 @@ public interface PostService {
 
 	List<Post> list(String id);
 
+	List<Post> utdList();
+
+	Post item(int pid);
+
 }

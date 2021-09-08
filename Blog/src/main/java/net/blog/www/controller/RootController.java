@@ -1,16 +1,21 @@
 package net.blog.www.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import net.blog.www.model.Member;
+import net.blog.www.model.Post;
 import net.blog.www.service.MemberService;
+import net.blog.www.service.PostService;
 
 @Controller
 public class RootController {
@@ -18,8 +23,14 @@ public class RootController {
 	@Autowired
 	MemberService service;
 	
+	@Autowired
+	PostService postService;
+	
 	@RequestMapping("/")
-	public String index() {
+	public String index(Model model) {
+		List<Post> list = postService.utdList();
+		model.addAttribute("list", list);
+		
 		return "index";
 	}
 	
@@ -69,5 +80,14 @@ public class RootController {
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:.";
+	}
+	
+	@RequestMapping("/showDetail")
+	public String showDetail(int pid, Model model) {
+		Post item = postService.item(pid);
+		
+		model.addAttribute("item", item);
+		
+		return "showDetail";
 	}
 }

@@ -23,5 +23,21 @@ public class PostDaoImpl implements PostDao {
 	public List<Post> list(String id) {
 		return sql.selectList("post.list", id);
 	}
+	
+	@Override
+	public List<Post> utdList(){
+		return sql.selectList("post.utdList");
+	}
+
+	@Override
+	public void viewcount(int pid) {
+		sql.update("post.viewcount", pid);
+		
+	}
+
+	@Override
+	public Post item(int pid) {
+		return sql.selectOne("post.showDetail", pid);
+	}
 
 }

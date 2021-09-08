@@ -4,8 +4,6 @@ import java.util.Date;
 
 public class Post {
 	
-	
-	
 	private int pid;
 	private String title;
 	private String content;
@@ -14,7 +12,6 @@ public class Post {
 	private int cid;
 	private int pcid;
 	private String pcname;
-	private String cname;
 	private int viewcount;
 	
 	public int getPcid() {
@@ -64,12 +61,6 @@ public class Post {
 	}
 	public void setPcname(String pcname) {
 		this.pcname = pcname;
-	}
-	public String getCname() {
-		return cname;
-	}
-	public void setCname(String cname) {
-		this.cname = cname;
 	}
 	public int getViewcount() {
 		return viewcount;

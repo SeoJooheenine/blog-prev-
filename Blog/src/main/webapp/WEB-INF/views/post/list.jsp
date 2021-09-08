@@ -38,7 +38,7 @@
 							<td>${item.content}</td>
 							<td><fmt:formatDate value="${item.regdate}" pattern="yy.MM.dd. HH:mm"/> </td>
 							<td>${item.id}</td>
-							<td id="${item.pcid}"> ${item.pcname}</td>
+							<td>${item.pcname}</td>
 							<td>${item.viewcount}</td>
 							<td>
 								<a href="delete?cid=${item.cid}">삭제</a>
