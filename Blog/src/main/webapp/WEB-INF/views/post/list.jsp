@@ -21,13 +21,14 @@
 						<th>작성일</th>
 						<th>id</th>
 						<th>카테고리명</th>
+						<th>조회수</th>
 						<th>관리</th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:if test="${list.size() < 1}">
 						<tr>
-							<td colspan="7">등록된 카테고리가 없습니다.</td>
+							<td colspan="8">등록된 카테고리가 없습니다.</td>
 						</tr>
 					</c:if>
 					<c:forEach var="item" items="${list}">
@@ -37,7 +38,8 @@
 							<td>${item.content}</td>
 							<td><fmt:formatDate value="${item.regdate}" pattern="yy.MM.dd. HH:mm"/> </td>
 							<td>${item.id}</td>
-							<td>${item.pcid}</td>
+							<td id="${item.pcid}"> ${item.pcname}</td>
+							<td>${item.viewcount}</td>
 							<td>
 								<a href="delete?cid=${item.cid}">삭제</a>
 								<a href="update?cid=${item.cid}">변경</a>

@@ -3,6 +3,9 @@ package net.blog.www.model;
 import java.util.Date;
 
 public class Post {
+	
+	
+	
 	private int pid;
 	private String title;
 	private String content;
@@ -10,6 +13,9 @@ public class Post {
 	private String id;
 	private int cid;
 	private int pcid;
+	private String pcname;
+	private String cname;
+	private int viewcount;
 	
 	public int getPcid() {
 		return pcid;
@@ -52,5 +58,23 @@ public class Post {
 	}
 	public void setCid(int cid) {
 		this.cid = cid;
+	}
+	public String getPcname() {
+		return pcname;
+	}
+	public void setPcname(String pcname) {
+		this.pcname = pcname;
+	}
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+	public int getViewcount() {
+		return viewcount;
+	}
+	public void setViewcount(int viewcount) {
+		this.viewcount = viewcount;
 	}
 }

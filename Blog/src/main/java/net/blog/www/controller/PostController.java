@@ -38,13 +38,12 @@ public class PostController {
 		item.setId(id);
 		service.add(item);
 		
-		return "redirect:../../";
+		return "redirect:../{id}/list";
 	}
 	
 	@RequestMapping({"/","/list"})
 	public String list(Model model, @PathVariable String id) {
 		List<Post> list = service.list(id);
-		
 		model.addAttribute("list", list);
 		
 		return path+"list";
